@@ -46,8 +46,8 @@
     return $count;
   }
    function diasJisuscrist($anioNew){
-     $aniodelosTiempos = ($anioNew -1) * 365;
-     return $aniodelosTiempos;
+     $diasdelosTiempos = ($anioNew -1) * 365;
+     return $diasdelosTiempos;
     }
     function desdeAnionuevo($mes, $anio) {
       $diasMes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -66,13 +66,13 @@
     $hastaJisusCrist = $dias + $meses + $anios;
     return $hastaJisusCrist;
   }
-  $aniodelosTiempos1 = diasJisuscrist($anio1) + calcularDiasBisiestos($anio1);
-  $aniodelosTiempos2 = diasJisuscrist($anio2) + calcularDiasBisiestos($anio2);
+  $diasdelosTiempos1 = diasJisuscrist($anio1) + calcularDiasBisiestos($anio1);
+  $diasdelosTiempos2 = diasJisuscrist($anio2) + calcularDiasBisiestos($anio2);
   $diasMes1 = desdeAnionuevo($mes1, $anio1);
   $diasMes2 = desdeAnionuevo($mes2, $anio2);
 
-  $iniciodelostiempos1 = calcularAnioCero($dia1, $diasMes1, $aniodelosTiempos1);
-  $iniciodelostiempos2 = calcularAnioCero($dia2, $diasMes2, $aniodelosTiempos2,);
+  $iniciodelostiempos1 = calcularAnioCero($dia1, $diasMes1, $diasdelosTiempos1);
+  $iniciodelostiempos2 = calcularAnioCero($dia2, $diasMes2, $diasdelosTiempos2,);
 
   $diferencia = $iniciodelostiempos1 - $iniciodelostiempos2;
 
