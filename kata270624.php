@@ -46,7 +46,9 @@
     return $count;
   }
    function diasJisuscrist($anioNew){
-     $diasdelosTiempos = ($anioNew -1) * 365;
+     $diasAnioCero = ($anioNew -1) * 365;
+     $bisisestos = calcularDiasBisiestos($anioNew);
+     $diasdelosTiempos = $diasAnioCero + $bisisestos;
      return $diasdelosTiempos;
     }
     function desdeAnionuevo($mes, $anio) {
@@ -62,19 +64,21 @@
       
       return $dias;
   }
+  
   function calcularAnioCero($dias, $meses, $anios){
     $hastaJisusCrist = $dias + $meses + $anios;
     return $hastaJisusCrist;
   }
-  $diasdelosTiempos1 = diasJisuscrist($anio1) + calcularDiasBisiestos($anio1);
-  $diasdelosTiempos2 = diasJisuscrist($anio2) + calcularDiasBisiestos($anio2);
+  
+  /*$diasdelosTiempos1 = diasJisuscrist($anio1);
+  $diasdelosTiempos2 = diasJisuscrist($anio2);
   $diasMes1 = desdeAnionuevo($mes1, $anio1);
   $diasMes2 = desdeAnionuevo($mes2, $anio2);
 
   $iniciodelostiempos1 = calcularAnioCero($dia1, $diasMes1, $diasdelosTiempos1);
   $iniciodelostiempos2 = calcularAnioCero($dia2, $diasMes2, $diasdelosTiempos2,);
 
-  $diferencia = $iniciodelostiempos1 - $iniciodelostiempos2;
+  $diferencia = $iniciodelostiempos1 - $iniciodelostiempos2;*/
 
   echo "la diferencia de dias es de: " .$diferencia . " dias segunda manera \n";
 
