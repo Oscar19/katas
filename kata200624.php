@@ -24,30 +24,33 @@
     function verificarParentesis($formula) {
         $buscar = [];
     
+   
         for ($i = 0; $i < strlen($formula); $i++) {
             $caracter = $formula[$i];
-        
+    
             if ($caracter == '(') {
                 array_push($buscar, '(');
             }
-            
+    
+        
             if ($caracter == ')') {
             
                 if (empty($buscar)) {
-                    echo "No has abierto el parentesis\n";
-                    exit; 
+                    return "No has abierto parentesis $i\n";
                 }
-            
                 array_pop($buscar);
             }
         }
-    } 
     
+        if (!empty($buscar)) {
+            return "Faltan paréntesis de cerrar.\n";
+        } else {
+            return "La fórmula está bien.\n";
+        }
+    }
+    
+ 
     $formula = readline("Escribe la formula: ");
     
-    if (!empty($buscar)) {
-        echo "No has cerrado la formula.\n";
-    } else {
-        echo "La fórmula es correcta\n";
-    }
- 
+
+    echo verificarParentesis($formula);
