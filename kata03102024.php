@@ -63,6 +63,18 @@ class PartidoTennis{
         }
         
     }
+    public function diferencia() {
+        $mayorDiferencia = 0;
+
+        foreach ($this->marcadors as $marcador) {
+            $diferencia = abs($marcador[0] - $marcador[1]); 
+            if ($diferencia > $mayorDiferencia) {
+                $mayorDiferencia = $diferencia;
+            }
+        }
+
+        echo "La diferencia més gran es la del joc : " . $mayorDiferencia ."\n";
+    }
     
 }
 $marcadors = [
@@ -70,9 +82,10 @@ $marcadors = [
     [3, 6], 
     [7, 5], 
     [2, 6], 
-    [2, 6]  
+    [3, 5]  
 ];
 $partit = new PartidoTennis("Jugador1", "Jugador2", $marcadors);
 $partit->mostrarMarcador();
 $partit->guanyador();
+$partit->diferencia();
 ?>
