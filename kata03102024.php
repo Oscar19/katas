@@ -63,7 +63,7 @@ class PartidoTennis{
         }
         
     }
-    public function diferencia() {
+    public function diferenciaMax() {
         $mayorDiferencia = 0;
 
         foreach ($this->marcadors as $marcador) {
@@ -87,5 +87,5 @@ $marcadors = [
 $partit = new PartidoTennis("Jugador1", "Jugador2", $marcadors);
 $partit->mostrarMarcador();
 $partit->guanyador();
-$partit->diferencia();
+$partit->diferenciaMax();
 ?>
