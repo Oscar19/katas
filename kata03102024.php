@@ -74,7 +74,7 @@ class PartidoTennis{
             }
         }
 
-        echo "La diferencia més gran es la del joc: " . ($juegoConMayorDiferencia + 1) . " amb una diferència de " . $mayorDiferencia . " juegos\n";        
+        echo "La diferencia més gran es la del joc: " . ($juegoConMayorDiferencia + 1) . " amb una diferència de " . $mayorDiferencia . " jocs\n";        
     }
     
 }
