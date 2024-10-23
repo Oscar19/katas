@@ -66,14 +66,15 @@ class PartidoTennis{
     public function diferenciaMax() {
         $mayorDiferencia = 0;
 
-        foreach ($this->marcadors as $marcador) {
+        foreach ($this->marcadors as $puntos => $marcador) {
             $diferencia = abs($marcador[0] - $marcador[1]); 
             if ($diferencia > $mayorDiferencia) {
                 $mayorDiferencia = $diferencia;
+                $juegoConMayorDiferencia = $puntos;
             }
         }
 
-        echo "La diferencia més gran es la del joc : " . $mayorDiferencia ."\n";
+        echo "La diferencia més gran es la del joc: " . ($juegoConMayorDiferencia + 1) . " amb una diferència de " . $mayorDiferencia . " juegos\n";        
     }
     
 }
